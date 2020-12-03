@@ -9,7 +9,7 @@ import com.algaworks.erp.model.Empresa;
 
 @ViewScoped
 @Named
-public class CadastrarEmpresaBean implements Serializable {
+public class ExemploCadastrarEmpresaBean implements Serializable {
 
 	
 	private static final long serialVersionUID = -4499061200590030018L;
