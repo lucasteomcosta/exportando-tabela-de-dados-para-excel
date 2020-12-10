@@ -1,11 +1,14 @@
 package com.algaworks.erp.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 import com.algaworks.erp.model.Empresa;
+
 
 @ViewScoped
 @Named
@@ -19,8 +22,16 @@ public class ExemploCadastrarEmpresaBean implements Serializable {
 	private Integer totalDeFuncionarios;
 	
 	private Empresa empresa;
+	
+	private List<Empresa> empresas;
 
 	
+	public void adicionar() {
+		if(empresas == null) {
+			empresas = new ArrayList<Empresa>();
+		}
+	}
+
 	public void pesquisar() {
 		// se a o nome da empresa for Fiat - 15000
 		// se a o nome da empresa for Cast - 2000
@@ -67,6 +78,13 @@ public class ExemploCadastrarEmpresaBean implements Serializable {
 		this.totalDeFuncionarios = totalDeFuncionarios;
 	}
 
-	
+
+	public List<Empresa> getEmpresas() {
+		return empresas;
+	}
+
+	public void setEmpresas(List<Empresa> empresas) {
+		this.empresas = empresas;
+	}
 
 }

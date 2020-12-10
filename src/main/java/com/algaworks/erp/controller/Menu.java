@@ -15,8 +15,10 @@ public class Menu implements Serializable{
 		
 		if(opcao == 1) {
 			return "/cadastrarEmpresa.xhtml";
-		}
-		
+		}else
+			if(opcao == 2) {
+				return "/listarEmpresa.xhtml";
+			}
 		return "";
 	}
 

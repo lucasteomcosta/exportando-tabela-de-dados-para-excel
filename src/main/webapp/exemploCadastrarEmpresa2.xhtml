@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+ 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+ 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+ 	xmlns:p="http://primefaces.org/ui"
+ 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+ 	template="WEB-INF/template/Layout.xhtml">
+ 	
+<ui:define name="titulo">
+	Listagem de Empresas
+</ui:define>
+
+<ui:define name="conteudo">
+	<f:metadata>
+		
+	</f:metadata>
+	  
+	  
+	<h:form  id="frmas">
+	<h:panelGrid columns="2">
+		<p:inputText value="#{exemploCadastrarEmpresaBean2.nomeFantasia}"  maxlength="10"  style="width:300px" placeholder="Digite algo aqui"/>
+		<p:commandButton  value="Adicionar" ajax="false" actionListener="#{exemploCadastrarEmpresaBean2.adicionar}" ></p:commandButton>
+	</h:panelGrid>	
+	
+	<h:panelGrid columns="2">
+			<p:dataTable var="empresa" value="#{exemploCadastrarEmpresaBean2.empresas}">
+		  	
+		    <p:column headerText="Nome Fantasia">
+		        <h:outputText value="#{empresa.nomeFantasia}" />
+		    </p:column>
+		 
+		    
+		</p:dataTable>
+	</h:panelGrid>
+	
+	</h:form>
+</ui:define>
+
+</ui:composition>

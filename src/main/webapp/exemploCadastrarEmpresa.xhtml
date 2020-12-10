@@ -18,10 +18,31 @@
 	  
 	<h:form  id="frmas">
 	<h:panelGrid columns="2">
-		<p:inputText value="#{cadastrarEmpresaBean.nomeEmpresa}"  maxlength="10"  style="width:300px" placeholder="Digite algo aqui"/>
-		<p:commandButton  value="Botão Pesquisar Prime Face" ajax="false" actionListener="#{cadastrarEmpresaBean.pesquisar}" ></p:commandButton>
-		<p:outputLabel value="#{cadastrarEmpresaBean.totalDeFuncionarios}" ></p:outputLabel>
+		<p:inputText value="#{exemploCadastrarEmpresaBean.nomeEmpresa}"  maxlength="10"  style="width:300px" placeholder="Digite algo aqui"/>
+		<p:commandButton  value="Botão Pesquisar Prime Face" ajax="false" actionListener="#{exemploCadastrarEmpresaBean.pesquisar}" ></p:commandButton>
+		<p:outputLabel value="#{exemploCadastrarEmpresaBean.totalDeFuncionarios}" ></p:outputLabel>
 	</h:panelGrid>	
+	
+	<h:panelGrid columns="2">
+			<p:dataTable var="empresa" value="#{exemploCadastrarEmpresaBean.empresas}">
+		    <p:column headerText="Id">
+		        <h:outputText value="#{empresa.id}" />
+		    </p:column>
+		 
+		    <p:column headerText="Year">
+		        <h:outputText value="#{empresa.nomeFantasia}" />
+		    </p:column>
+		 
+		    <p:column headerText="Brand">
+		        <h:outputText value="#{empresa.razaoSocial}" />
+		    </p:column>
+		 
+		    <p:column headerText="Color">
+		        <h:outputText value="#{empresa.cnpj}" />
+		    </p:column>
+		</p:dataTable>
+	</h:panelGrid>
+	
 	</h:form>
 </ui:define>
 
